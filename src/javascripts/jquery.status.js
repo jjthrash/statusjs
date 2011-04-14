@@ -143,7 +143,7 @@
             </tr>\
           </tbody>\
         </table>');
-      $(document.body).append(status.windowTemplate.apply(status));
+      $.tmpl($.status.windowTemplate, $.status).appendTo(document.body);
   };
 
   status.hide = function(){
@@ -162,7 +162,7 @@
   status.buildOverlay = function(){
     if($('div.status_overlay').length != 0)
       return;
-    $('body').append($.template('<div class="status_overlay" style="display: none; position: absolute; background-color:white; top:0px; left:0px; z-index:100; height: ${height}px; width: ${width}px; opacity: 0.01"></div>').apply(document.viewport.getDimensions()));
+    $.tmpl($.template('<div class="status_overlay" style="display: none; position: absolute; background-color:white; top:0px; left:0px; z-index:100; height: ${height}px; width: ${width}px; opacity: 0.01"></div>'), document.viewport.getDimensions()).appendTo($('body'));
   };
 
   status.showOverlay = function(){
