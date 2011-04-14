@@ -194,8 +194,4 @@
       return this;
     }
   });
-  $(document.body).ajaxStop(function(){
-    // Hide status window when all Ajax requests finish
-    $.status.hide();
-  });
 })(jQuery);
